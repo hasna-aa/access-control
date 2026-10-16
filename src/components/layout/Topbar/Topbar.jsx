@@ -1,11 +1,11 @@
 import React from "react";
-import { Menu, Code2, Database } from "lucide-react";
+import { Menu, Code2 } from "lucide-react";
 import { useAccessControl } from "../../../context/useAccessControl";
 import NotificationDropdown from "../../common/NotificationDropdown/NotificationDropdown";
 import "./Topbar.css";
 
 export default function Topbar() {
-  const { activePage, setMobileNav, setShowApiModal, isDbConnected, dbLoading } = useAccessControl();
+  const { activePage, setMobileNav, setShowApiModal } = useAccessControl();
 
   return (
     <header className="topbar">
@@ -23,14 +23,6 @@ export default function Topbar() {
       </div>
 
       <div className="topbar-right">
-        <div
-          className={`db-status-badge ${isDbConnected ? "connected" : dbLoading ? "loading" : "disconnected"}`}
-          title={isDbConnected ? "Connected to MongoDB Atlas" : "MongoDB not connected - using local fallback"}
-        >
-          <Database size={13} />
-          <span className="db-dot"></span>
-          <span>{isDbConnected ? "MongoDB Atlas" : dbLoading ? "Connecting..." : "MongoDB Offline"}</span>
-        </div>
 
         <button
           className="secondary-button spec-btn-top"
