@@ -1,0 +1,127 @@
+.arch-layers-box {
+  background: #fbfbfe;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+.arch-layers-box h4, .endpoints-box h4, .json-box-top h4 {
+  font: 700 13px var(--font-heading);
+  margin: 0 0 8px;
+  color: #1e2439;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ascii-tree pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #434a62;
+  line-height: 1.4;
+  overflow-x: auto;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ededf5;
+}
+
+.endpoints-box {
+  margin-bottom: 16px;
+}
+.endpoint-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.endpoint-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  padding: 6px 10px;
+  background: var(--surface);
+  border-radius: 6px;
+  border: 1px solid #f1f2f7;
+}
+.http-method {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  min-width: 44px;
+  text-align: center;
+}
+.http-method.get { background: #dbeafe; color: #1e40af; }
+.http-method.post { background: #dcfce7; color: #166534; }
+.http-method.put { background: #fef3c7; color: #92400e; }
+.http-method.patch { background: #f3e8ff; color: #6b21a8; }
+.endpoint-row code {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #1e2439;
+  width: 170px;
+}
+.ep-desc {
+  color: #7f869a;
+  font-size: 10px;
+}
+
+.json-model-box {
+  margin-bottom: 16px;
+}
+.json-box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.json-preview-code {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  background: #1e2433;
+  color: #e2e8f0;
+  padding: 14px;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.security-notice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.sec-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.sec-box svg {
+  color: var(--primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.sec-box strong {
+  font-size: 11px;
+  color: #202638;
+  display: block;
+}
+.sec-box p {
+  font-size: 10px;
+  color: #72798f;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+.sec-box code {
+  font-family: var(--font-mono);
+  background: #eef0f8;
+  padding: 1px 4px;
+  border-radius: 3px;
+}

@@ -1,0 +1,94 @@
+.reports-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.report-selector-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 18px 16px;
+  cursor: pointer;
+  transition: all .16s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.report-selector-card:hover {
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+.report-selector-card.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-ring);
+  background: #f8fafc;
+}
+.report-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+}
+.report-card-icon.violet { background: #f0f4fa; color: #1c3670; }
+.report-card-icon.blue { background: #e0f2fe; color: #0284c7; }
+.report-card-icon.green { background: #ecfdf5; color: var(--success); }
+.report-card-icon.orange { background: #fcf1d1; color: #000133; }
+.report-card-info strong {
+  font-size: 13px;
+  color: #051540;
+  display: block;
+}
+.report-card-info p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+.card-dl-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #636b84;
+  display: grid;
+  place-items: center;
+}
+.card-dl-btn:hover {
+  background: #f0f4fa;
+  color: var(--primary);
+}
+
+.badge-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0f4fa;
+  color: var(--primary);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.badge-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.badge-success {
+  background: #e8f8f0;
+  color: #129b68;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+}

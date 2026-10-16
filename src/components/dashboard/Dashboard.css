@@ -1,0 +1,40 @@
+.dashboard-page .stats-grid {
+  margin-top: 24px;
+}
+
+.dashboard-shortcuts {
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.dashboard-shortcuts h2 {
+  margin-right: auto;
+  font: 700 15px var(--font-heading);
+}
+
+.timestamp-cell {
+  width: 160px;
+}
+.mono-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #7f869a;
+}
+.log-action-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--primary);
+  background: #f0f4fa;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.details-text {
+  font-size: 11px;
+  color: #525a72;
+  max-width: 480px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

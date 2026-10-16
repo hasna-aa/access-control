@@ -1,0 +1,4 @@
+/* App-level shell adjustments if needed */
+.app-shell {
+  min-height: 100vh;
+}

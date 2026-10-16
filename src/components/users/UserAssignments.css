@@ -1,0 +1,10 @@
+.branch-text-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4b5268;
+  font-size: 11px;
+}
+.branch-text-inline svg {
+  color: #8c93a8;
+}
