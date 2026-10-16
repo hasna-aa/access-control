@@ -1,7 +1,16 @@
-const API_BASE = "/api";
+const RAW_BACKEND_URL = (
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://access-control-server-flame.vercel.app"
+).replace(/\/+$/, "");
+
+// Normalize to ensure requests target the /api namespace
+const API_BASE = RAW_BACKEND_URL.endsWith("/api")
+  ? RAW_BACKEND_URL
+  : `${RAW_BACKEND_URL}/api`;
 
 async function request(endpoint, options = {}) {
-  const url = `${API_BASE}${endpoint}`;
+  const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
+  const url = `${API_BASE}${cleanEndpoint}`;
   const config = {
     headers: {
       "Content-Type": "application/json",

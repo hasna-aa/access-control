@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 import { connectDB } from "./db.js";
 import { seedInitialData } from "./seedData.js";
 import rolesRouter from "./routes/roles.js";
@@ -20,6 +21,18 @@ const PORT = process.env.PORT || 5000;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Ensure MongoDB Atlas is connected for serverless invocations (e.g. Vercel)
+app.use(async (req, res, next) => {
+  if (mongoose.connection.readyState !== 1) {
+    try {
+      await connectDB();
+    } catch (err) {
+      return res.status(500).json({ error: "Database connection failed", details: err.message });
+    }
+  }
+  next();
+});
 
 // Routes
 app.use("/api/roles", rolesRouter);
@@ -58,5 +71,11 @@ async function startServer() {
   }
 }
 
-startServer();
+// In local environment, start HTTP server directly; on Vercel, serverless function invokes exported app
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
+
 
