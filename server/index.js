@@ -41,11 +41,28 @@ app.use("/api/audit-logs", auditLogsRouter);
 app.use("/api/notifications", notificationsRouter);
 app.use("/api/reset", resetRouter);
 
-// Health check
+// Root health check endpoint
+app.get("/", (req, res) => {
+  res.json({
+    status: "ok",
+    service: "Access Control RBAC API",
+    database: mongoose.connection.readyState === 1 ? "connected" : "connecting",
+    endpoints: [
+      "/api/health",
+      "/api/roles",
+      "/api/users",
+      "/api/audit-logs",
+      "/api/notifications",
+    ],
+    time: new Date().toISOString(),
+  });
+});
+
+// API Health check
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
-    database: "connected",
+    database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
     time: new Date().toISOString(),
   });
 });

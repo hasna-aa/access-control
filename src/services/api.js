@@ -1,6 +1,6 @@
 const RAW_BACKEND_URL = (
   import.meta.env.VITE_API_BASE_URL ||
-  "https://access-control-server-flame.vercel.app"
+  "https://access-control-server-t4ki.vercel.app"
 ).replace(/\/+$/, "");
 
 // Normalize to ensure requests target the /api namespace

@@ -9,7 +9,7 @@ import {
   INITIAL_USERS,
   INITIAL_AUDIT_LOGS,
   INITIAL_NOTIFICATIONS,
-} from "../src/data/mockData.js";
+} from "./data/mockData.js";
 
 export async function seedInitialData(force = false) {
   let isStandalone = false;
